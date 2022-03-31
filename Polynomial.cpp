@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iomanip>
 #include "Polynomial.h"
 
 int Polynomial::maxDegree = 0;
@@ -33,10 +32,10 @@ Polynomial::Polynomial(const Polynomial &p){
 	}
 }
 Polynomial::~Polynomial(){
-	if(coeff){
-		delete[] coeff;
+	/*if(coeff){
+		delete [] coeff;
 		coeff = NULL;
-	}
+	}*/
 }
 Polynomial &Polynomial::setCoeff(int deg, double c){
 	coeff[deg] = c;
@@ -48,7 +47,6 @@ void Polynomial::print() const{
 		cout << "0" << endl;
 		return;
 	}
-	cout << fixed << setprecision(1);
 	int i, max = 0;
 	for (i = 0; i <= degree; i++) {
 		if (coeff[i] && i > max)
