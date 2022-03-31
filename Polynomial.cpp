@@ -32,30 +32,51 @@ Polynomial &Polynomial::setCoeff(int deg, double c){
 	return *this;
 }
 void Polynomial::print() const{
-	if (!coeff && !degree)
+	cout << "polynomial = ";
+	if (!coeff && !degree) {
 		cout << "0" << endl;
-	cout << "polynomial = " << fixed << setprecision(1);
-	int i;
-	for(i = 0; i <= degree; i++){
-		if(i == 0)
-			cout << coeff[i];
-		cout << "+" << coeff[i] << "X^" << i;
+		return;
+	}
+	cout << fixed << setprecision(1);
+	int i, max = 0;
+	for (i = 0; i <= degree; i++) {
+		if (coeff[i] && i > max)
+			max = i;
+	}
+	for(i = 0; i <= max; i++){
+		if (i == 0) {
+			if (!coeff[i])
+				cout << "0";
+			else
+				cout << coeff[i];
+		}
+		else {
+			cout << "+";
+			if (!coeff[i])
+				cout << "0";
+			else
+				cout << coeff[i];
+			cout << "X^" << i;
+		}
 	}
 	cout << endl;
 }
 int Polynomial::getMaxDegree(){
 	return maxDegree;
 }
-double Polynomial::getDegree(bool what){
-	if(!what)
+int Polynomial::getDegree(bool what) const{
+	if (!what) 
 		return degree;
+	else
+		return getDegree();
+}
+int Polynomial::getDegree() const{
 	int i, cnt = 0;
 	for (i = 0; i <= degree; i++)
 		if (coeff[i])
 			cnt = i;
 	return cnt;
 }
-double Polynomial::getCoeff(int index){
-
-	return 0;
+double Polynomial::getCoeff(int index) const{
+	return coeff[index];
 }

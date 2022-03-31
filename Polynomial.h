@@ -16,13 +16,9 @@ public:
 	void print() const;
 	Polynomial &setCoeff(int, double);
 	static int getMaxDegree();
-	double getDegree(bool);
-	double getCoeff(int);
-
-
+	int getDegree(bool) const;
+	int getDegree() const;
+	double getCoeff(int) const;
 };
-
-
-
 
 #endif

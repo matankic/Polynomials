@@ -3,8 +3,7 @@
 
 class Rational{
 private:
-
-
+	Polynomial num, denom;
 public:
 
 

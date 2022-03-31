@@ -34,7 +34,7 @@ void testPolynomial()
 	p2.print();
 	cout << "test6 :maxDegree = " << Polynomial::getMaxDegree() << endl;
 	cout << "______________" << endl;
-}/*
+}
 void testRational() {
 	cout << "----- start testRational ---------" << endl;
 	cout << "test7" << endl;
@@ -51,18 +51,18 @@ void testRational() {
 	cout << "nom = ";
 	r2.getNom().print();
 	double val[5];
-	val[0]= getCoeff(r2.getNom(),1);
+	val[0] = getCoeff(r2.getNom(), 1);
 	val[1] = getCoeff(r2.getNom(), 5);
 	cout << "denom = ";
 	r2.getDenom().print();
-	val[2] = getCoeff(r2.getDenom(),0);
+	val[2] = getCoeff(r2.getDenom(), 0);
 	val[3] = getCoeff(r2.getDenom(), 15);
 	val[4] = getCoeff(r2.getDenom(), -1);
 	cout << "test10 :maxDegree = " << Polynomial::getMaxDegree() << endl;
 	cout << "__________________________" << endl;
-}*/
+}
 int main()
 {
 	testPolynomial();
-	//testRational();
+	testRational();
 }
